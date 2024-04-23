@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.estagio.entity.AlunoEntity;
 import br.com.estagio.entity.VagaEntity;
 import br.com.estagio.service.VagaService;
 

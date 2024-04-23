@@ -4,7 +4,6 @@ import java.util.List;
 
 import br.com.estagio.entity.VagaEntity;
 
-
 public interface VagaService {
 	
 	String save(VagaEntity vagaEntity) throws Exception;

@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.estagio.entity.AlunoEntity;
 import br.com.estagio.entity.VagaEntity;
-import br.com.estagio.repository.AlunoRepository;
 import br.com.estagio.repository.VagaRepository;
 
 @Service
@@ -44,13 +42,13 @@ public class VagaServiceImpl implements VagaService {
 
 	@Override
 	public List<VagaEntity> findAll() {
-		// TODO Auto-generated method stub
+
 		return vagaRepository.findAll();
 	}
 
 	@Override
 	public VagaEntity getOneByIdVaga(Long idVaga) throws Exception {
-		// TODO Auto-generated method stub
+		
 		return vagaRepository.getOneByIdVaga(idVaga);
 	}
 
@@ -59,7 +57,7 @@ public class VagaServiceImpl implements VagaService {
 		try
 		{
 			vagaRepository.deleteById(idVaga);
-			this.mensagem = "Vaga Excluido com sucesso";
+			this.mensagem = "Vaga Excluida com sucesso";
 			
 		} catch(Exception e) {
 			throw new Exception(e.getMessage());
