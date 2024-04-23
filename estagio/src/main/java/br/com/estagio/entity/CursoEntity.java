@@ -22,9 +22,7 @@ private static final long serialVersionUID = 1L;
 
 	@Column(name = "nome")
 	private String nome;
-
-	@Column(name = "periodo")
-	private String periodo;
+	
 
 	public Long getIdCurso() {
 		return idCurso;
@@ -41,14 +39,5 @@ private static final long serialVersionUID = 1L;
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public String getPeriodo() {
-		return periodo;
-	}
-
-	public void setPeriodo(String periodo) {
-		this.periodo = periodo;
-	}
-	
 
 }

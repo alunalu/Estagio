@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `estagio` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `estagio`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: estagio
@@ -26,7 +24,7 @@ DROP TABLE IF EXISTS `aluno`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aluno` (
   `id_aluno` int NOT NULL AUTO_INCREMENT,
-  `matricula` int NOT NULL,
+  `matricula` varchar(1000) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `telefone` int NOT NULL,
   `periodo` varchar(45) NOT NULL,
@@ -37,7 +35,7 @@ CREATE TABLE `aluno` (
   KEY `escola_id_idx` (`escola_id`),
   CONSTRAINT `curso_id` FOREIGN KEY (`curso_id`) REFERENCES `curso` (`id_curso`),
   CONSTRAINT `escola_id` FOREIGN KEY (`escola_id`) REFERENCES `escola` (`id_escola`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +44,7 @@ CREATE TABLE `aluno` (
 
 LOCK TABLES `aluno` WRITE;
 /*!40000 ALTER TABLE `aluno` DISABLE KEYS */;
+INSERT INTO `aluno` VALUES (2,'3453534','Kaio',323223,'Noturno',1,1);
 /*!40000 ALTER TABLE `aluno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,9 +84,9 @@ DROP TABLE IF EXISTS `curso`;
 CREATE TABLE `curso` (
   `id_curso` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
-  `periodo` varchar(45) NOT NULL,
+  `periodo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_curso`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,6 +95,7 @@ CREATE TABLE `curso` (
 
 LOCK TABLES `curso` WRITE;
 /*!40000 ALTER TABLE `curso` DISABLE KEYS */;
+INSERT INTO `curso` VALUES (1,'Informática',NULL),(3,'Administração','Noite');
 /*!40000 ALTER TABLE `curso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +115,7 @@ CREATE TABLE `escola` (
   `rua` varchar(45) NOT NULL,
   `numero` int NOT NULL,
   PRIMARY KEY (`id_escola`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,41 @@ CREATE TABLE `escola` (
 
 LOCK TABLES `escola` WRITE;
 /*!40000 ALTER TABLE `escola` DISABLE KEYS */;
+INSERT INTO `escola` VALUES (1,'AAA','AAA','AAAA','AAAA','AAAAAA',7);
 /*!40000 ALTER TABLE `escola` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `flyway_schema_history`
+--
+
+DROP TABLE IF EXISTS `flyway_schema_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `flyway_schema_history` (
+  `installed_rank` int NOT NULL,
+  `version` varchar(50) DEFAULT NULL,
+  `description` varchar(200) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `script` varchar(1000) NOT NULL,
+  `checksum` int DEFAULT NULL,
+  `installed_by` varchar(100) NOT NULL,
+  `installed_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `execution_time` int NOT NULL,
+  `success` tinyint(1) NOT NULL,
+  PRIMARY KEY (`installed_rank`),
+  KEY `flyway_schema_history_s_idx` (`success`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `flyway_schema_history`
+--
+
+LOCK TABLES `flyway_schema_history` WRITE;
+/*!40000 ALTER TABLE `flyway_schema_history` DISABLE KEYS */;
+INSERT INTO `flyway_schema_history` VALUES (1,'1','<< Flyway Baseline >>','BASELINE','<< Flyway Baseline >>',NULL,'root','2024-04-22 23:31:20',0,1);
+/*!40000 ALTER TABLE `flyway_schema_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -147,7 +181,7 @@ CREATE TABLE `permissao` (
 
 LOCK TABLES `permissao` WRITE;
 /*!40000 ALTER TABLE `permissao` DISABLE KEYS */;
-INSERT INTO `permissao` VALUES (1,'Administrador'),(2,'Aluno'),(3,'Administrador'),(4,'Aluno');
+INSERT INTO `permissao` VALUES (1,'administrador'),(2,'aluno');
 /*!40000 ALTER TABLE `permissao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,12 +195,12 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
-  `login` int NOT NULL,
-  `senha` int NOT NULL,
+  `cpf` varchar(11) NOT NULL,
+  `senha` varchar(1000) NOT NULL,
   `escola_id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `escola_id_idx` (`escola_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,6 +209,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'Kaio','99999999999','$2a$10$Hyh7x9pPOY5hW/EmR3RpE.dhABdNibJRo/Y5kFEooxSfLc3tZf0RK','1');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,6 +236,7 @@ CREATE TABLE `usuario_permissao` (
 
 LOCK TABLES `usuario_permissao` WRITE;
 /*!40000 ALTER TABLE `usuario_permissao` DISABLE KEYS */;
+INSERT INTO `usuario_permissao` VALUES (1,1);
 /*!40000 ALTER TABLE `usuario_permissao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,7 +254,7 @@ CREATE TABLE `vaga` (
   `beneficios` varchar(45) NOT NULL,
   `curso` varchar(45) NOT NULL,
   PRIMARY KEY (`id_vaga`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,6 +263,7 @@ CREATE TABLE `vaga` (
 
 LOCK TABLES `vaga` WRITE;
 /*!40000 ALTER TABLE `vaga` DISABLE KEYS */;
+INSERT INTO `vaga` VALUES (1,'1',33,'5','Informatica');
 /*!40000 ALTER TABLE `vaga` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -239,4 +276,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-16 17:49:13
+-- Dump completed on 2024-04-23  3:19:20

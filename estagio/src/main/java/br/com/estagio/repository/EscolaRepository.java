@@ -5,8 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import br.com.estagio.entity.EscolaEntity;
 
+
 @Repository
 public interface EscolaRepository extends JpaRepository<EscolaEntity, Long> {
+	
+	EscolaEntity getOneByIdEscola(Long idEscola);
 
 }
 
