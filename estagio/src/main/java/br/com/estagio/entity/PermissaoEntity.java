@@ -23,18 +23,17 @@ private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_permissao")
-	private Long id;
+	private Long idPermissao;
 	
 	@Column(name = "nome")
 	private String nome;
 
-	
-	public Long getId() {
-		return id;
+	public Long getIdPermissao() {
+		return idPermissao;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdPermissao(Long idPermissao) {
+		this.idPermissao = idPermissao;
 	}
 
 	public String getNome() {

@@ -3,11 +3,12 @@ package br.com.estagio.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.estagio.entity.EscolaEntity;
 import br.com.estagio.repository.EscolaRepository;
 
-
+@Service
 public class EscolaServiceImpl implements EscolaService {
 	
 	@Autowired

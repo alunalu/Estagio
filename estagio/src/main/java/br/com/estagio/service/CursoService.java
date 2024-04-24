@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.estagio.entity.CursoEntity;
 
 
+
 public interface CursoService {
 	
 	String save(CursoEntity cursoEntity) throws Exception;
