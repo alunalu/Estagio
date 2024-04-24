@@ -29,6 +29,8 @@ public class SecSecurityConfig {
 				.requestMatchers("/singin", "/singup").permitAll()
 				.requestMatchers("/aluno").hasAnyAuthority("administrador")
 				.requestMatchers("/vaga").hasAnyAuthority("administrador")
+				.requestMatchers("/curso").hasAnyAuthority("administrador")
+				.requestMatchers("/escola").hasAnyAuthority("administrador")
 				.anyRequest().authenticated()
 				)
 		        .formLogin(formLogin -> formLogin

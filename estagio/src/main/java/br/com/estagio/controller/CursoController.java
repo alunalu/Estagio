@@ -12,7 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.estagio.entity.CursoEntity;
 import br.com.estagio.service.CursoService;
-import br.com.horario.entity.CursosEntity;
+
 
 @Controller
 public class CursoController {
