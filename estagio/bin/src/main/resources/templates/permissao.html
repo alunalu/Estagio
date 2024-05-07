@@ -9,7 +9,7 @@
 		<form name="salvar_permissao" class="form-horizontal" method="post" th:action="@{/salvar_permissao}"
 		th:object="${permissaoEntity}">
 		<div class="container">
-			<h2>Permissões</h2>
+			<h2>Cursos</h2>
 		
 		<div class="container">
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
@@ -53,9 +53,8 @@
 			</tbody>
 
 		</table>
-		</div>
 		</form>					
-		</div>
+		
 		<div th:insert="~{layout/rodape}"></div>
 		
 </body>
