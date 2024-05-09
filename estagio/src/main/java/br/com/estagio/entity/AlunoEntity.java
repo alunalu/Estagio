@@ -29,7 +29,7 @@ private static final long serialVersionUID = 1L;
        private String nome;
 
        @Column(name = "telefone")
-       private Long telefone;
+       private String telefone;
 
        @Column(name = "periodo")
        private String periodo;
@@ -66,11 +66,11 @@ private static final long serialVersionUID = 1L;
 		this.nome = nome;
 	}
 
-	public Long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -97,6 +97,8 @@ private static final long serialVersionUID = 1L;
 	public void setCurso(CursoEntity curso) {
 		this.curso = curso;
 	}
+
+	
 	
 	
 

@@ -36,7 +36,7 @@ private static final long serialVersionUID = 1L;
 	private String rua;
 	
 	@Column(name = "numero")
-	private Long numero;
+	private String numero;
 
 	public Long getIdEscola() {
 		return idEscola;
@@ -86,12 +86,13 @@ private static final long serialVersionUID = 1L;
 		this.rua = rua;
 	}
 
-	public Long getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Long numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
+
 	
 }
