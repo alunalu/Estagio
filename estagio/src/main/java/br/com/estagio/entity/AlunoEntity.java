@@ -1,6 +1,7 @@
 package br.com.estagio.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -41,6 +44,12 @@ private static final long serialVersionUID = 1L;
        @OneToOne()
        @JoinColumn(name = "curso_id", referencedColumnName = "id_curso")
        private CursoEntity curso;
+       
+       @ManyToMany
+   	   @JoinTable(name="aluno_vaga",
+   	   joinColumns= {@JoinColumn(name="aluno_id", referencedColumnName = "id_aluno")},
+   	   inverseJoinColumns={@JoinColumn(name="vaga_id" , referencedColumnName = "id_vaga")})
+   	   private List<VagaEntity> vagas;
 
 	public Long getIdAluno() {
 		return idAluno;

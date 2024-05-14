@@ -14,6 +14,7 @@ import br.com.estagio.entity.AlunoEntity;
 import br.com.estagio.service.AlunoService;
 
 
+
 @Controller
 public class AlunoController {
 	@Autowired
@@ -72,4 +73,16 @@ public class AlunoController {
 		return mv;
 			
 	}
+	
+	@GetMapping("/relatorio")
+	public String relatorio(ModelMap model)
+	{
+		
+		return "relatorio";
+	}
+	
+		
+	
+	
+	
 }
