@@ -71,10 +71,10 @@
 					<td th:text="${vaga.valorBolsa}"></td>
 					<td th:text="${vaga.curso}"></td>
 					<td th:text="${vaga.beneficios}"></td>
-					<td><a class="btn btn-sn btn-warning" th:href="@{alterar_vaga/{idVaga}(idVaga=${vaga.IdVaga})}">Alterar</a></td>
+					<td><a class="btn btn-sm btn-warning" th:href="@{alterar_vaga/{idVaga}(idVaga=${vaga.IdVaga})}">Alterar</a></td>
 					<!--Começa o excluir-->
 					<td>
-						<a class="delete btn btn-sm btn-danger"
+						<a class="btn btn-sm btn-danger"
 							th:href="@{excluir_vaga/{idVaga}(idVaga=${vaga.IdVaga})}"
 							onclick="if (confirm('Deseja realmente excluir o aluno?')){return true;}else{event.stopPropagation();event.preventDefault();};">
 							Excluir

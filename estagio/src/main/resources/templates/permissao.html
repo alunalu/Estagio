@@ -51,9 +51,9 @@
 				<tr th:each="permissao : ${permissao}">
 					<td th:text="${permissao.IdPermissao}"></td>
 					<td th:text="${permissao.Nome}"></td>
-					<td><a class="btn btn-sn btn-warning" th:href="@{alterar_permissao/{idPermissao}(idPermissao=${permissao.IdPermissao})}">Alterar</a></td>
+					<td><a class="btn btn-sm btn-warning" th:href="@{alterar_permissao/{idPermissao}(idPermissao=${permissao.IdPermissao})}">Alterar</a></td>
 					<td>
-						<a class="delete btn btn-sm btn-danger"
+						<a class="btn btn-sm btn-danger"
 							th:href="@{excluir_permissao/{idPermissao}(idPermissao=${permissao.IdPermissao})}"
 							onclick="if (confirm('Deseja realmente excluir o curso?')){return true;}else{event.stopPropagation();event.preventDefault();};">
 							Excluir

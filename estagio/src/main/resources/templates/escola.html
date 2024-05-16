@@ -86,10 +86,10 @@
 					<td th:text="${escola.Bairro}"></td>
 					<td th:text="${escola.Rua}"></td>
 					<td th:text="${escola.Numero}"></td>
-					<td><a class="btn btn-sn btn-warning" th:href="@{alterar_escola/{idEscola}(idEscolao=${escola.IdEscola})}">Alterar</a></td>
+					<td><a class="btn btn-sm btn-warning" th:href="@{alterar_escola/{idEscola}(idEscolao=${escola.IdEscola})}">Alterar</a></td>
 					<!--Começa o excluir-->
 					<td>
-						<a class="delete btn btn-sm btn-danger"
+						<a class="btn btn-sm btn-danger"
 							th:href="@{excluir_escola/{idEscola}(idEscola=${escola.IdEscola})}"
 							onclick="if (confirm('Deseja realmente excluir o aluno?')){return true;}else{event.stopPropagation();event.preventDefault();};">
 							Excluir
