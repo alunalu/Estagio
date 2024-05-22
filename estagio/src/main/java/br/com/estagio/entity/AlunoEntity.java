@@ -25,9 +25,6 @@ private static final long serialVersionUID = 1L;
        @Column(name = "id_aluno")
        private Long idAluno;
        
-       @Column(name = "matricula")
-       private Long matricula;
-
        @Column(name = "nome")
        private String nome;
 
@@ -57,14 +54,6 @@ private static final long serialVersionUID = 1L;
 
 	public void setIdAluno(Long idAluno) {
 		this.idAluno = idAluno;
-	}
-
-	public Long getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(Long matricula) {
-		this.matricula = matricula;
 	}
 
 	public String getNome() {
@@ -105,6 +94,14 @@ private static final long serialVersionUID = 1L;
 
 	public void setCurso(CursoEntity curso) {
 		this.curso = curso;
+	}
+
+	public List<VagaEntity> getVagas() {
+		return vagas;
+	}
+
+	public void setVagas(List<VagaEntity> vagas) {
+		this.vagas = vagas;
 	}
 
 	

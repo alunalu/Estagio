@@ -26,13 +26,15 @@ public class AlunoServiceImpl implements AlunoService {
 		} else if (alunoEntity.getTelefone() == null){
 			this.mensagem = "Digite o telefone do aluno.";
 			throw new Exception("Preencha o telefone do aluno.");
-
-		} else if (alunoEntity.getMatricula() == null) {
-			this.mensagem = "Digite a matricula do aluno.";
-			throw new Exception("Preencha a matricula do aluno.");
 		} else if (alunoEntity.getPeriodo() == null) {
 			this.mensagem = "Digite o periodo do aluno.";
 			throw new Exception("Preencha o periodo do aluno");
+		} else if (alunoEntity.getEscola() == null) {
+			this.mensagem = "Selecione a escola do aluno.";
+			throw new Exception("Selecione a escola do aluno.");
+		} else if (alunoEntity.getCurso() == null) {
+			this.mensagem = "Selecione o curso do aluno.";
+			throw new Exception("Selecione o curso do aluno.");
 		} else {
 			alunoRepository.saveAndFlush(alunoEntity);
 			this.mensagem = "Aluno cadastrado com sucesso";

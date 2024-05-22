@@ -2,12 +2,10 @@ package br.com.estagio.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -40,8 +39,10 @@ private static final long serialVersionUID = 1L;
 	@Column(name= "senha")
 	private String senha;
 	
+	@OneToOne()
+    @JoinColumn(name = "empresa_id", referencedColumnName = "id_empresa")
+    private EmpresaEntity empresa;
 	
-
 	@ManyToMany
 	@JoinTable(name="usuario_permissao",
 	joinColumns= {@JoinColumn(name="usuario_id", referencedColumnName = "id_usuario")},
