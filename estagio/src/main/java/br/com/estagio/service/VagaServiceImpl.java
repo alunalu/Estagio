@@ -19,9 +19,9 @@ public class VagaServiceImpl implements VagaService {
 	@Override
 	public String save(VagaEntity vagaEntity) throws Exception {
 		
-		if (vagaEntity.getRequisitos() == null) {
-			this.mensagem = "Digite os requisitos da vaga.";
-			throw new Exception("Preencha os requisitos da vaga.");
+		if (vagaEntity.getNome() == null) {
+			this.mensagem = "Digite o nome da vaga.";
+			throw new Exception("Preencha o nome da vaga.");
 			
 		} else if (vagaEntity.getValorBolsa() == null){
 			this.mensagem = "Digite o valor da bolsa.";
@@ -63,6 +63,12 @@ public class VagaServiceImpl implements VagaService {
 			throw new Exception(e.getMessage());
 		}
 		return mensagem;
+	}
+
+	@Override
+	public VagaEntity getOneByEmpresaId(Long idEmpresa) throws Exception {
+		
+		return vagaRepository.getOneByEmpresaId(idEmpresa);
 	}
 
 }

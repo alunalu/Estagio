@@ -27,11 +27,11 @@ public class SecSecurityConfig {
 		http.authorizeHttpRequests(
 				auth -> auth
 				.requestMatchers("/singin", "/singup").permitAll()
-				.requestMatchers("/aluno").hasAnyAuthority("administrador")
+				.requestMatchers("/aluno").hasAnyAuthority("administrador","empresa")
 				.requestMatchers("/vaga").hasAnyAuthority("administrador")
 				.requestMatchers("/curso").hasAnyAuthority("administrador")
 				.requestMatchers("/escola").hasAnyAuthority("administrador")
-				.requestMatchers("/relatorio").hasAnyAuthority("administrador")
+				.requestMatchers("/relatorio").hasAnyAuthority("administrador","empresa")
 				.anyRequest().authenticated()
 				)
 		        .formLogin(formLogin -> formLogin

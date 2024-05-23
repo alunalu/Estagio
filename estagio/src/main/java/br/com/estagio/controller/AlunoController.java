@@ -74,14 +74,6 @@ public class AlunoController {
 			
 	}
 	
-	@GetMapping("/relatorio")
-	public String relatorio(ModelMap model)
-	{
-		
-		return "relatorio";
-	}
-	
-		
 	
 	
 	

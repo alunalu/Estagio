@@ -22,7 +22,7 @@ public class LoginController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String login = auth.getName(); //recupera o login do usuario logado     
         
-        session.setAttribute("loginUsuarioLogado", login); //inclui na sessção o login do usuário
+        session.setAttribute("loginusuariologado", login); //inclui na sessção o login do usuário
 		return "principal"; //caminho real do arquivo
 	}
 

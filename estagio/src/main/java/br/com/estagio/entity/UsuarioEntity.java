@@ -35,7 +35,6 @@ private static final long serialVersionUID = 1L;
 	@Column(name = "cpf")
 	private String cpf;
 	
-	
 	@Column(name= "senha")
 	private String senha;
 	
@@ -132,6 +131,14 @@ private static final long serialVersionUID = 1L;
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+	public EmpresaEntity getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(EmpresaEntity empresa) {
+		this.empresa = empresa;
 	}
 	
 	

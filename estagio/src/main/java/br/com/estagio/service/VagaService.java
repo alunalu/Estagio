@@ -10,6 +10,7 @@ public interface VagaService {
 	List<VagaEntity> findAll();
 	VagaEntity getOneByIdVaga (Long idVaga) throws Exception;
 	String deleteById(Long idVaga) throws Exception;
+	VagaEntity getOneByEmpresaId(Long empresaId) throws Exception;
 	
 
 }

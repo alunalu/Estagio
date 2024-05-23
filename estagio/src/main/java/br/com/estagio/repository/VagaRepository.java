@@ -9,5 +9,6 @@ import br.com.estagio.entity.VagaEntity;
 public interface VagaRepository extends JpaRepository<VagaEntity, Long> {
 	
 	VagaEntity getOneByIdVaga(Long idVaga);
+	VagaEntity getOneByEmpresaId(Long empresaId);
 
 }
