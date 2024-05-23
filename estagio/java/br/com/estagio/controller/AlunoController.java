@@ -12,6 +12,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.estagio.entity.AlunoEntity;
 import br.com.estagio.service.AlunoService;
+import br.com.estagio.service.CursoService;
+import br.com.estagio.service.EscolaService;
 
 
 
@@ -20,10 +22,18 @@ public class AlunoController {
 	@Autowired
 	private AlunoService alunoService;
 	
+	@Autowired
+	private CursoService cursoService;
+	
+	@Autowired
+	private EscolaService escolaService;
+	
 	@GetMapping("/aluno")
 	public String aluno(ModelMap model)
 	{
 		model.addAttribute("aluno", alunoService.findAll());
+		model.addAttribute("curso", cursoService.findAll());
+		model.addAttribute("escola", escolaService.findAll());
 		return "aluno";
 	}
 	
